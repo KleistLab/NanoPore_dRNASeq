@@ -12,22 +12,22 @@ analysis_set["main"] = ["Human", "Human_IVT",  "Mouse",  "Zebrafish", "C. elegan
     
 refs, fastq_files, summary_files = {}, {}, {}
 
-refs["SARS2_IVT"] = pysam.Fastafile("sars2/sars2ivt/SARS-CoV-2.fa") # CTTT instead of CTTC in the paper...
-refs["SARS2"] = refs["SARS2_IVT"]
+#refs["SARS2_IVT"] = pysam.Fastafile("sars2/sars2ivt/SARS-CoV-2.fa") # CTTT instead of CTTC in the paper...
+#refs["SARS2"] = refs["SARS2_IVT"]
 
-refs["shortRNAs_IVT"] = pysam.Fastafile("nanorms/small_RNAs.fasta") 
+#refs["shortRNAs_IVT"] = pysam.Fastafile("nanorms/small_RNAs.fasta") 
 
-refs["Yeast"] = pysam.Fastafile("epinano/epinano_yeast_rep2/Yeast_sk1.fa")
+#refs["Yeast"] = pysam.Fastafile("epinano/epinano_yeast_rep2/Yeast_sk1.fa")
 
-refs["Human"] = pysam.Fastafile("eligos/HS_H460/GCF_000001405.40_GRCh38.p14_genomic.fna")
-refs["Human_IVT"] = refs["Human"]
+#refs["Human"] = pysam.Fastafile("eligos/HS_H460/GCF_000001405.40_GRCh38.p14_genomic.fna")
+#refs["Human_IVT"] = refs["Human"]
 
-refs["Mouse"] = pysam.Fastafile("mouse/GCF_000001635.27_GRCm39_genomic.fna")
-refs["Zebrafish"] = pysam.Fastafile("nano3pseq/GCF_000002035.6_GRCz11_genomic.fna")
-refs["H. volcanii"] = pysam.Fastafile("regensburg/hvo/GCF_000025685.1_ASM2568v1_genomic.fna")
-refs["E. coli"] = pysam.Fastafile("regensburg/ecoli/escherichia_000005845.2_ASM584v2_genomic.fna")
-refs["Arabidopsis"] = pysam.Fastafile("parkersimpson2020/arabidopsis_TAIR10.1_genomic.fna")
-refs["C. elegans"] = pysam.Fastafile("celegans/GCF_000002985.6_WBcel235_genomic.fna")
+#refs["Mouse"] = pysam.Fastafile("mouse/GCF_000001635.27_GRCm39_genomic.fna")
+#refs["Zebrafish"] = pysam.Fastafile("nano3pseq/GCF_000002035.6_GRCz11_genomic.fna")
+#refs["H. volcanii"] = pysam.Fastafile("regensburg/hvo/GCF_000025685.1_ASM2568v1_genomic.fna")
+#refs["E. coli"] = pysam.Fastafile("regensburg/ecoli/escherichia_000005845.2_ASM584v2_genomic.fna")
+#refs["Arabidopsis"] = pysam.Fastafile("parkersimpson2020/arabidopsis_TAIR10.1_genomic.fna")
+#refs["C. elegans"] = pysam.Fastafile("celegans/GCF_000002985.6_WBcel235_genomic.fna")
     
 samfiles = {"Human_IVT": "eligos/human_ivt/human_ivt_guppy.sam",
              "Human": "eligos/HS_H460/h460_guppy.sam",
@@ -52,7 +52,7 @@ analysis_set["rodan"] = []
 for sample in analysis_set["main"]:
     key =  sample + "_rodan"
     analysis_set["rodan"].append(key)
-    refs[key] = refs[sample]
+ #   refs[key] = refs[sample]
     samfiles[key] = samfiles[sample].replace("guppy", "rodan")
     
 for sample in samfiles.keys():
